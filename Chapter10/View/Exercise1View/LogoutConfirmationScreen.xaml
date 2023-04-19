@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise1View.LogoutConfirmationScreen"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:ViewModel="clr-namespace:Chapter10.ViewModel.Exercise1ViewModel.ViewModelLogout"
+             Title="LogoutConfirmationScreen">
+
+    <ContentPage.BindingContext>
+        <ViewModel:LogoutViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout
+        Padding="20">
+        <HorizontalStackLayout
+            Margin="20"
+            HorizontalOptions="Center">
+            <Image
+                HeightRequest="60"
+                WidthRequest="60"
+                Source="appella"/>
+            <Label
+                FontSize="24"
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                Text="Appella"/>
+        </HorizontalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            TextColor="MediumBlue"
+            FontAttributes="Bold"
+            FontSize="25"
+            Text="Let's get started."/>
+
+        <Label
+            Margin="0,20"
+            FontSize="16"
+            TextColor="HotPink"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="Make the school app &#10;your personal assistant"/>
+
+        <Label
+            Margin="0,20,0,0"
+            FontAttributes="Bold"
+            Text="USERNAME"/>
+       
+        <Grid
+            ColumnSpacing="5"
+            ColumnDefinitions="Auto,*">
+            <Image
+                Grid.Column="0"
+                Source="user"
+                HeightRequest="20"
+                WidthRequest="20"/>
+            <Entry
+                Text="{Binding UserName}"
+                VerticalOptions="Center"
+                Grid.Column="1"
+                FontSize="17"
+                Placeholder="your username"/>
+        </Grid>
+        <Line
+            HeightRequest="1"
+            BackgroundColor="Gray"/>
+
+        
+        <Label
+            Margin="0,30,0,0"
+            FontAttributes="Bold"
+            Text="PASSWORD  "/>
+
+        <Grid
+            ColumnSpacing="5"
+            ColumnDefinitions="Auto,*,Auto">
+            <Image
+                Grid.Column="0"
+                Source="lock"
+                HeightRequest="20"
+                WidthRequest="20"/>
+            <Entry
+                VerticalOptions="Center"
+                Grid.Column="1"
+                Text="{Binding Password}"
+                FontSize="17"
+                Placeholder="your password"/>
+            <Image
+                Grid.Column="2"
+                Source="eye"
+                HeightRequest="20"
+                WidthRequest="20"/>
+        </Grid>
+        <Line
+            HeightRequest="1"
+            BackgroundColor="Gray"/>
+
+        <Label
+            HorizontalOptions="EndAndExpand"
+            Margin="10,20,0,10"
+            FontAttributes="Bold"
+            TextColor="Blue"
+            Text="Forgot your password?"/>
+
+        <Button
+            Command="{Binding SignInCommand}"
+            FontAttributes="Bold"
+            FontSize="16"
+            Margin="0,30"
+            Text="Sign in"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

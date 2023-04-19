@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise2View.ChangeProfileScreen"
+             Title="Edit Profile">
+
+    <ScrollView>
+    <StackLayout
+        Padding="10">
+            <Grid
+                Margin="0,20"
+                HorizontalOptions="Center"
+                ColumnDefinitions="Auto">
+                <Border
+                    Padding="5"
+                    BackgroundColor="Black"
+                    StrokeShape="RoundRectangle 100"
+                    HeightRequest="100"
+                    WidthRequest="100">
+                    <Image          
+                        Source="dotnet_bot"/>
+                </Border>
+                <Border
+                    BackgroundColor="Green"
+                    Padding="3"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    StrokeShape="RoundRectangle 30"
+                    HorizontalOptions="End"
+                    VerticalOptions="End">
+                    <Image
+                        Source="eye"></Image>
+                </Border>
+            </Grid>
+           
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

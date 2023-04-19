@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise1View.ProfileScreen"
+             xmlns:ViewModel="clr-namespace:Chapter10.ViewModel.Exercise1ViewModel.ViewModelProfile"
+             Title="ProfileScreen">
+
+    <ContentPage.BindingContext>
+        <ViewModel:ProfileViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+    <StackLayout>
+        <Label 
+            Text="{Binding ResponceDetails.Email}"/>
+            <Image
+                HeightRequest="300"
+                WidthRequest="300"
+                Source="{Binding ResponceDetails.Image}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
