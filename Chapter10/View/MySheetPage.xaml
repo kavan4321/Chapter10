@@ -1,0 +1,73 @@
+<the49:BottomSheet 
+            xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+             x:Class="Chapter10.View.MySheetPage">
+
+
+    <Border
+       Padding="20">
+        <StackLayout
+            Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Profile Photo"/>
+            <Grid
+                ColumnSpacing="20"
+                ColumnDefinitions="Auto,Auto,Auto">
+                <VerticalStackLayout
+                    Spacing="10"
+                    Grid.Column="0">
+                    <Border
+                        Padding="10"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        StrokeShape="RoundRectangle 25">
+                        <ImageButton
+                            x:Name="Camera"
+                            Clicked="CameraClicked"
+                            Source="camera"/>
+                    </Border>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Camera"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Spacing="10"
+                    Grid.Column="1">
+                    <Border
+                        Padding="10"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        StrokeShape="RoundRectangle 25">
+                        <ImageButton
+                            x:Name="Gallery"
+                            Clicked="GalleryClicked"
+                            Source="gallery"/>
+                    </Border>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Gallery"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Spacing="10"
+                    Grid.Column="2">
+                    <Border
+                        Padding="10"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        StrokeShape="RoundRectangle 25">
+                        <ImageButton
+                            x:Name="Cancel"
+                            Clicked="CancelClicked"
+                            Source="cancel"/>
+                    </Border>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Remove"/>
+                </VerticalStackLayout>
+            </Grid>
+        </StackLayout>
+    </Border>
+</the49:BottomSheet>

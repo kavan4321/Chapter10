@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise5View.WebViewScreen"
+             NavigationPage.HasBackButton="False"
+             Title="WebViewScreen">
+ 
+    <NavigationPage.TitleView>
+        <Border
+            BackgroundColor="Transparent"
+            StrokeThickness="0"
+                Padding="10">
+            <Grid
+                 ColumnDefinitions="*,*,*">
+                <ImageButton
+                        x:Name="BackButton"
+                        Clicked="BackButtonClicked"
+                        HorizontalOptions="Start"
+                        Grid.Column="0"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Source="back"/>
+                <Label
+                        Grid.Column="1"
+                        TextColor="White"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Text="WebView"/>
+                <ImageButton
+                        x:Name="NextButton"
+                        Clicked="NextButtonClicked"
+                        Grid.Column="2"
+                        HorizontalOptions="EndAndExpand"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Rotation="180"
+                        Source="back"/>
+            </Grid>
+        </Border>
+    </NavigationPage.TitleView>
+
+
+        <Grid>
+            <WebView                
+                x:Name="webView"               
+                Source="https://learn.microsoft.com/dotnet/maui"/>
+            <Button
+                x:Name="LaunchButton"
+                Clicked="LaunchButtonClicked"
+                Margin="10"
+                CornerRadius="30"
+                FontAttributes="Bold"
+                BackgroundColor="DarkCyan"
+                Text="Launch in browser"
+                VerticalOptions="EndAndExpand"/>
+        </Grid>
+
+</ContentPage>

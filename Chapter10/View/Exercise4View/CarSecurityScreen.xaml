@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise4View.CarSecurityScreen"
+             xmlns:ViewModel="clr-namespace:Chapter10.ViewModel.Exercise4ViewModel.ViewModelCar"
+             Title="Audi E-Tron">
+
+    <ContentPage.BindingContext>
+        <ViewModel:CarViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout
+            Padding="10">
+            <Image
+                Margin="0,100,0,30"
+                Source="daco"/>
+            <Label
+                Text="Audi E-Tron GT"
+                FontSize="24"
+                FontAttributes="Bold"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            TextColor="RoyalBlue"
+                            FontAttributes="Bold"
+                            Text="Ex-showroom prize:"/>
+                        <Span
+                            Text=" "/>
+                        <Span
+                            Text="$17,000 -$20,000"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Border
+                Margin="20"
+                Padding="10"
+                StrokeShape="RoundRectangle 10">
+                <HorizontalStackLayout
+                    Spacing="5"
+                    HorizontalOptions="Center">
+                    <Image
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Source="security"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="17"
+                        VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span
+                                    Text="Security is"/>
+                                <Span
+                                    Text=" "/>
+                                <Span
+                                    Text="{Binding TitleLabel}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+            </Border>
+            <Button
+                Command="{Binding SecurityCommand}"
+                FontAttributes="Bold"
+                BackgroundColor="DarkCyan"
+                VerticalOptions="EndAndExpand"
+                Text="{Binding ButtonLabel}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

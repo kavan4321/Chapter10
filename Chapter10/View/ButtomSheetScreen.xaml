@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.ButtomSheetScreen"
+             Title="ButtomSheetScreen">
+   
+    <StackLayout>
+        <Grid
+            Margin="0,25"
+            HorizontalOptions="Center"
+            ColumnDefinitions="Auto">
+            <Border
+                Padding="5"
+                BackgroundColor="Black"
+                StrokeShape="RoundRectangle 100"
+                HeightRequest="100"
+                WidthRequest="100">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizerTapped"
+                        NumberOfTapsRequired="1"/>
+                </Border.GestureRecognizers>
+                <Image   
+                    Source="dotnet_bot"/>
+            </Border>
+            <Border
+                BackgroundColor="Green"
+                Padding="3"
+                HeightRequest="30"
+                WidthRequest="30"
+                StrokeShape="RoundRectangle 30"
+                HorizontalOptions="End"
+                VerticalOptions="End">
+                <Image
+                    Source="edit"></Image>
+            </Border>
+        </Grid>
+    </StackLayout>
+</ContentPage>

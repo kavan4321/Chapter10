@@ -8,31 +8,55 @@
     <StackLayout
         Padding="10">
             <Grid
-                Margin="0,20"
-                HorizontalOptions="Center"
-                ColumnDefinitions="Auto">
+                Margin="0,25"
+                HorizontalOptions="Center">
                 <Border
                     Padding="5"
                     BackgroundColor="Black"
-                    StrokeShape="RoundRectangle 100"
-                    HeightRequest="100"
-                    WidthRequest="100">
-                    <Image          
+                    StrokeShape="RoundRectangle 150"
+                    HeightRequest="150"
+                    WidthRequest="150">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizerTapped"
+                            NumberOfTapsRequired="1"/>
+                    </Border.GestureRecognizers>
+                    <Image   
                         Source="dotnet_bot"/>
                 </Border>
                 <Border
                     BackgroundColor="Green"
                     Padding="3"
-                    HeightRequest="30"
-                    WidthRequest="30"
-                    StrokeShape="RoundRectangle 30"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    StrokeShape="RoundRectangle 40"
                     HorizontalOptions="End"
                     VerticalOptions="End">
                     <Image
                         Source="eye"></Image>
                 </Border>
             </Grid>
-           
+            <Label
+                FontSize="16"
+                TextColor="CornflowerBlue"
+                Text="Full Name"/>
+            <Entry
+                />
+            <Label
+                Margin="0,20,0,0"
+                FontSize="16"
+                TextColor="CornflowerBlue"
+                Text="Email"/>
+            <Entry
+                />
+
+            <Button
+                Text="Save"
+                FontAttributes="Bold"
+                FontSize="16"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="DarkCyan"
+                CornerRadius="30"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

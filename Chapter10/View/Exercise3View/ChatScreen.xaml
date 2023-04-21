@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter10.View.Exercise3View.ChatScreen"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:ViewModel="clr-namespace:Chapter10.ViewModel.Exercise3ViewModel.ViewModelChat"
+             BackgroundColor="Black"
+             Title="ChatScreen">
+
+    <ContentPage.BindingContext>
+        <ViewModel:ChatViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <StackLayout>
+            <Border
+                Padding="10,20,10,30"
+                StrokeThickness="0"
+                BackgroundColor="#343434">
+                <StackLayout
+                    Spacing="10">
+                    <Label
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="27"
+                        Text="Swipe to delete"/>
+                    <Label
+                        FontAttributes="Bold"
+                        TextColor="DimGray"
+                        FontSize="15"
+                        Text="Swipe left the message to reveal starring and deleting options."/>
+                </StackLayout>
+            </Border>
+            <CollectionView
+                x:Name="ChatCollection"
+                Margin="10"
+                EmptyView="No Chat Availible"
+                ItemsSource="{Binding ChatDetails}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItemView
+                                        CommandParameter="{Binding}"
+                                        Command="{Binding Source={x:Reference ChatCollection},Path=BindingContext.DeleteCommand}"> 
+                                    <Border
+                                        Margin="10"
+                                        Padding="20"
+                                        BackgroundColor="Green"
+                                        StrokeThickness="0"
+                                        StrokeShape="RoundRectangle 35"
+                                        HeightRequest="70"
+                                        WidthRequest="70">
+                                        <Image
+                                            Source="delete"/>
+                                    </Border>
+                                </SwipeItemView>
+                            </SwipeView.RightItems>
+                            <Border
+                            StrokeThickness="0"
+                            BackgroundColor="#343434"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="15">
+                            <Grid
+                                ColumnSpacing="10"
+                                ColumnDefinitions="Auto,*,Auto">
+                                <Border
+                                    StrokeThickness="0"
+                                    HeightRequest="40"
+                                    WidthRequest="40"
+                                    StrokeShape="RoundRectangle 20">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        Source="{Binding ImageSource}"/>
+                                </Border>
+                                <VerticalStackLayout
+                                    Spacing="5"
+                                    Grid.Column="1">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span
+                                                    TextColor="White"
+                                                    FontSize="18"
+                                                    Text="{Binding Name}"/>
+                                                <Span
+                                                    Text="  "/>
+                                                <Span
+                                                    TextColor="DarkOliveGreen"
+                                                    Text="•Work"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label
+                                        TextColor="DimGray"
+                                        LineBreakMode="TailTruncation"
+                                        Text="{Binding Description}"/>
+                                </VerticalStackLayout>
+                                <Image
+                                    Grid.Column="2"
+                                    HeightRequest="25"
+                                    WidthRequest="25"
+                                    Source="edit"/>
+                            </Grid>
+                        </Border>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

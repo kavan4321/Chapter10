@@ -52,9 +52,14 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\about.svg" />
 	  <None Remove="Resources\Images\Appella.png" />
+	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\camera.svg" />
+	  <None Remove="Resources\Images\cancel.svg" />
+	  <None Remove="Resources\Images\Daco.png" />
 	  <None Remove="Resources\Images\delete.svg" />
 	  <None Remove="Resources\Images\edit.svg" />
 	  <None Remove="Resources\Images\eye.svg" />
+	  <None Remove="Resources\Images\gallery.svg" />
 	  <None Remove="Resources\Images\history.svg" />
 	  <None Remove="Resources\Images\lock.svg" />
 	  <None Remove="Resources\Images\logout.svg" />
@@ -63,6 +68,11 @@
 	  <None Remove="Resources\Images\security.svg" />
 	  <None Remove="Resources\Images\setting.svg" />
 	  <None Remove="Resources\Images\user.svg" />
+	  <None Remove="Resources\Images\user1.jpg" />
+	  <None Remove="Resources\Images\user2.jpg" />
+	  <None Remove="Resources\Images\user3.jpg" />
+	  <None Remove="Resources\Images\user4.jpg" />
+	  <None Remove="Resources\Images\user5.png" />
 	  <None Remove="Resources\Images\userone.svg" />
 	</ItemGroup>
 
@@ -71,10 +81,14 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Refit" Version="6.3.2" />
+		<PackageReference Include="The49.Maui.BottomSheet" Version="1.0.0-alpha4" />
 		<PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\ButtomSheetScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Exercise1View\LogoutConfirmationScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -84,6 +98,23 @@
 	  <MauiXaml Update="View\Exercise2View\ChangeProfileScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Exercise3View\ChatScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Exercise4View\CarSecurityScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Exercise5View\WebViewScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\MySheetPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="View\Exercise6View\" />
+	  <Folder Include="View\Exercise7View\" />
 	</ItemGroup>
 
 </Project>
